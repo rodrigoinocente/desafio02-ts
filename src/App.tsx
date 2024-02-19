@@ -1,29 +1,21 @@
-import { 
-  Center,
+import { Layout } from './components/Layout';
+import { Card } from './components/Card';
+
+import {
   ChakraProvider,
-  Input,
-  Box,
-  Button
 } from '@chakra-ui/react'
-import { login } from './services/login';
+import { ChangeEvent } from 'react';
 
 function App() {
   return (
     <ChakraProvider>
-      <Box minHeight='100vh' backgroundColor='#9413dc' padding='25px'>
-        <Box backgroundColor='#FFFFFF' borderRadius='25px' padding='15px' >
-          <Center>
-            <h1>Faça o login</h1>
-          </Center>
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Center>
-            <Button onClick={login} colorScheme='teal' size='sm' width='100%' marginTop='5px'>
-              Button
-            </Button>
-          </Center>
-        </Box>
-      </Box>
+      <Layout>
+        <Card inputValue={''} loginChange={function (event: ChangeEvent<HTMLInputElement>): void {
+          throw new Error('Function not implemented.');
+        } } loginButtonClick={function (): void {
+          throw new Error('Function not implemented.');
+        } } />
+      </Layout>
     </ChakraProvider>
   );
 }

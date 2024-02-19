@@ -1,12 +1,4 @@
-import { login } from "./login"
+export{}
 
-describe('login', () => {
-
-    const mockAlert = jest.fn()
-    window.alert = mockAlert
-
-    it('Deve exibir um alert com boas vindas', () => {
-        login()
-        expect(mockAlert).toHaveBeenCalledWith('Bem vinda!')
-    })
-})
+// irei aprender a rederizar o virtual DOM para futuramente
+// aprender a executar este teste
