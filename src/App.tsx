@@ -10,11 +10,7 @@ function App() {
   return (
     <ChakraProvider>
       <Layout>
-        <Card inputValue={''} loginChange={function (event: ChangeEvent<HTMLInputElement>): void {
-          throw new Error('Function not implemented.');
-        } } loginButtonClick={function (): void {
-          throw new Error('Function not implemented.');
-        } } />
+        <Card />
       </Layout>
     </ChakraProvider>
   );

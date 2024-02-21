@@ -1,4 +1,12 @@
-export{}
+import { loginButtonClick } from "./login"
 
-// irei aprender a rederizar o virtual DOM para futuramente
-// aprender a executar este teste
+describe ('login', () => {
+
+    const mockAlert = jest.fn()
+    window.alert = mockAlert
+
+    it('Deve exibir um alert de boas vindas', () => {
+        loginButtonClick('Bartolomeu')
+        expect(mockAlert).toHaveBeenCalledWith('Boas Vindas, Bartolomeu!')
+    })
+})
