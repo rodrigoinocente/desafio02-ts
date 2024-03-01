@@ -1,12 +1,14 @@
-import { loginButtonClick } from "./login"
+import { login } from "./login"
 
-describe ('login', () => {
+describe('login', () => {
+    const mockEmail = 'rodrigo@dio.bank'
+    it('Deve exibir um alert com boas vindas caso o email seja válido', async() => {
+        const response = await login(mockEmail)
+        expect(response).toBeTruthy()
+    })
 
-    const mockAlert = jest.fn()
-    window.alert = mockAlert
-
-    it('Deve exibir um alert de boas vindas', () => {
-        loginButtonClick('Bartolomeu')
-        expect(mockAlert).toHaveBeenCalledWith('Boas Vindas, Bartolomeu!')
+    it('Deve exibir um erro coso o email seja inválido', async() => {
+        const response = await login('invalidoemail@dio.bank')
+        expect(response).toBeFalsy()
     })
 })
