@@ -50,7 +50,7 @@ const ContaInfo = () => {
                 ID: {userData.id}
                 </Card>
                 <Card >
-                Saldo: {userData.balance}
+                Saldo: R${userData?.balance.toFixed(2)}
                 </Card>
                 <Link to='/conta/1'>
                 <Text fontSize='xl' color='white'>
